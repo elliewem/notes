@@ -1,7 +1,9 @@
+"use strict";
+
 (function() {
-    notelist = new NoteList();
-    noteListView = new NoteListView(notelist);
-    noteController = new NoteController(notelist, noteListView);
+    var notelist = new NoteList();
+    var noteListView = new NoteListView(notelist);
+    var noteController = new NoteController(notelist, noteListView);
     noteController.add("Favourite drink: seltzer")
     noteController.insertHTML();
   }

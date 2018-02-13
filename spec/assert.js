@@ -1,3 +1,5 @@
+"use strict";
+
 var assert = {
   isTrue: function(assertionToCheck, name) {
     if (!assertionToCheck) {

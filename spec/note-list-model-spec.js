@@ -1,3 +1,5 @@
+"use strict";
+
 (function(exports) {
     var noteList = new NoteList();
 

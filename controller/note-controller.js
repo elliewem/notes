@@ -1,8 +1,10 @@
+"use strict";
+
 (function(exports) {
   function NoteController(notelist, noteListView, element = document.getElementById('app')) {
     this._noteListModel = notelist;
-    this._noteListView = noteListView
-    this._element = element
+    this._noteListView = noteListView;
+    this._element = element;
   }
 
   NoteController.prototype.element = function () {

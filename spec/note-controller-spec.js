@@ -1,9 +1,9 @@
-// 'use strict';
+'use strict';
 
 (function(exports) {
-  var noteController = new NoteController();
 
   (function testInstantiateNoteController () {
+    var noteController = new NoteController();
     assert.isA(
       noteController,
       NoteController,
@@ -12,10 +12,13 @@
   })();
 
   (function testInsertHtml() {
-    mockElement = {
+    var mockElement = {
       innerHTML: ""
     }
-    noteController = new NoteController(mockElement)
+    var notelist = new NoteList();
+    var noteListView = new NoteListView(notelist);
+    var noteController = new NoteController(notelist, noteListView, mockElement)
+    noteController.add("Favourite drink: seltzer")
     noteController.insertHTML();
     assert.isTrue(
       (noteController.element().innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>"),

@@ -1,7 +1,9 @@
+"use strict";
+
 (function(exports) {
   function NoteList() {
     this._notes = [];
-  }
+  };
 
   NoteList.prototype.notes = function () {
     return this._notes;
@@ -12,4 +14,4 @@
   };
 
   exports.NoteList = NoteList;
-})(this)
+})(this);

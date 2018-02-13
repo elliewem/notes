@@ -1,3 +1,5 @@
+"use strict";
+
 (function(exports) {
   var note = new Note("Javascript is my favourite language");
 
