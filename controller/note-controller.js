@@ -1,13 +1,16 @@
 (function(exports) {
-  function NoteController(element = document.getElementById('app')) {
-    this._noteListModel = new NoteList();
-    this._noteListModel.add("Favourite drink: seltzer");
-    this._noteListView = new NoteListView(this._noteListModel);
+  function NoteController(notelist, noteListView, element = document.getElementById('app')) {
+    this._noteListModel = notelist;
+    this._noteListView = noteListView
     this._element = element
   }
 
   NoteController.prototype.element = function () {
     return this._element;
+  };
+
+  NoteController.prototype.add = function (string) {
+    this._noteListModel.add(string);
   };
 
   NoteController.prototype.insertHTML = function () {
