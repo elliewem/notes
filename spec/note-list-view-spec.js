@@ -42,4 +42,23 @@
     );
   })();
 
+  (function testNoteId () {
+    var newerNoteList = new NoteList();
+    newerNoteList.add("This should be 0")
+    assert.isTrue(
+      newerNoteList.notes()[0].id() === 0,
+      "Note list adds an ID of 0"
+    );
+  })();
+
+  (function testSecondNoteId () {
+    var superNewNoteList = new NoteList();
+    superNewNoteList.add("This should be 0")
+    superNewNoteList.add("This should be 1")
+    assert.isTrue(
+      superNewNoteList.notes()[1].id() === 1,
+      "Second note in the notelist has an id of 1"
+    )
+  })();
+
 })(this);
