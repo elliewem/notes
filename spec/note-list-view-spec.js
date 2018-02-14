@@ -32,4 +32,14 @@
     );
   })();
 
+  (function testOnlyTwentyCharacters () {
+    var newNoteList = new NoteList();
+    newNoteList.add("Hello, this is a great new string that the whole family can enjoy")
+    var noteListView = new NoteListView(newNoteList)
+    assert.isTrue(
+      noteListView.list() === "<ul><li><div>Hello, this is a gre</div></li></ul>",
+      "Only the first twenty characters of a note are displayed"
+    );
+  })();
+
 })(this);

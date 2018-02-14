@@ -14,11 +14,12 @@
   (function testInsertHtml() {
     var mockElement = {
       innerHTML: ""
-    }
-    var notelist = new NoteList();
-    var noteListView = new NoteListView(notelist);
-    var noteController = new NoteController(notelist, noteListView, mockElement)
-    noteController.add("Favourite drink: seltzer")
+    };
+    var fakeNoteListView = {
+      list: function() {return "<ul><li><div>Favourite drink: seltzer</div></li></ul>"}
+    };
+    var fakeNotelist = {};
+    var noteController = new NoteController(fakeNotelist, fakeNoteListView, mockElement)
     noteController.insertHTML();
     assert.isTrue(
       (noteController.element().innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>"),
