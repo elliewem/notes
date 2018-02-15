@@ -19,5 +19,14 @@
     this._element.innerHTML = this._noteListView.list();
   };
 
+  NoteController.prototype.addNoteToPage = function () {
+    window.addEventListener("hashchange", this.changeTextAtNoteDiv);
+  };
+
+  NoteController.prototype.changeTextAtNoteDiv = function () {
+    return document.getElementById("note").innerHTML = "hello"
+  };
+
+
   exports.NoteController = NoteController;
 })(this);

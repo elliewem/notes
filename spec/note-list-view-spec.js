@@ -17,7 +17,7 @@
     var noteListView = new NoteListView(noteList);
 
     assert.isTrue(
-      noteListView.list() === "<ul><li><div>Hi there!</div></li></ul>",
+      noteListView.list() === "<ul><li><div><a href='#0'>Hi there!</a></div></li></ul>",
       "1 note listed in HTML"
     );
   })();
@@ -27,7 +27,7 @@
     var noteListView = new NoteListView(noteList);
 
     assert.isTrue(
-      noteListView.list() === "<ul><li><div>Hi there!</div></li><li><div>Greetings!</div></li></ul>",
+      noteListView.list() === "<ul><li><div><a href='#0'>Hi there!</a></div></li><li><div><a href='#1'>Greetings!</a></div></li></ul>",
       "2 notes listed in HTML"
     );
   })();
@@ -37,7 +37,7 @@
     newNoteList.add("Hello, this is a great new string that the whole family can enjoy")
     var noteListView = new NoteListView(newNoteList)
     assert.isTrue(
-      noteListView.list() === "<ul><li><div>Hello, this is a gre</div></li></ul>",
+      noteListView.list() === "<ul><li><div><a href='#0'>Hello, this is a gre</a></div></li></ul>",
       "Only the first twenty characters of a note are displayed"
     );
   })();

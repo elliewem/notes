@@ -6,5 +6,6 @@
     var noteController = new NoteController(notelist, noteListView);
     noteController.add("Favourite drink: seltzer")
     noteController.insertHTML();
+    noteController.addNoteToPage();
   }
 )();
