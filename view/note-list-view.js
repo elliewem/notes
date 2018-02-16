@@ -14,5 +14,5 @@
     return string;
   };
 
-  exports.NoteListView = NoteListView
+  exports.NoteListView = NoteListView;
 })(this);

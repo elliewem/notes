@@ -39,6 +39,18 @@
       }
     })
     return found
+  };
+
+  NoteController.prototype.listenForSubmit = function () {
+    window.addEventListener("submit", function(event) {
+      event.preventDefault();
+      this.actionOnSubmit(event);
+    }.bind(this));
+  }
+
+  NoteController.prototype.actionOnSubmit = function (event) {
+    this.add(event.path["0"]["0"].value);
+    this.insertHTML();
   }
 
   exports.NoteController = NoteController;

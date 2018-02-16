@@ -13,7 +13,7 @@
       <input type="submit" value="submit">
     </form>
 
-    <div id="app">hello</div>
+    <div id="app"></div>
 
     <div id="note"></div>
 
@@ -25,6 +25,13 @@
       <script src="view/single-note-view.js"></script>
       <script src="controller/note-controller.js"></script>
       <script src="view/index.js"></script>
+      <script>
+        var notelist = new NoteList();
+        var noteListView = new NoteListView(notelist);
+        var noteController = new NoteController(notelist, noteListView);
+        noteController.addNoteToPage();
+        noteController.listenForSubmit();
+      </script>
 
   </body>
 </html>
