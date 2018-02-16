@@ -24,7 +24,7 @@
   };
 
   NoteController.prototype.changeTextAtNoteDiv = function () {
-    var thisNote = new SingleNote(this.getNote(this.getNoteIDFromUrl()))
+    var thisNote = new SingleNote(this.getNote(this.getNoteIDFromUrl()));
     document.getElementById("note").innerHTML = thisNote.parse();
   };
 
@@ -34,11 +34,9 @@
 
   NoteController.prototype.getNote = function (noteId) {
     var found = this._noteListModel.notes().find(function(element) {
-      if (element.id() === noteId) {
-        return element
-      }
-    })
-    return found
+      if (element.id() === noteId) { return element };
+    });
+    return found;
   };
 
   NoteController.prototype.listenForSubmit = function () {
@@ -46,12 +44,12 @@
       event.preventDefault();
       this.actionOnSubmit(event);
     }.bind(this));
-  }
+  };
 
   NoteController.prototype.actionOnSubmit = function (event) {
     this.add(event.path["0"]["0"].value);
     this.insertHTML();
-  }
+  };
 
   exports.NoteController = NoteController;
 })(this);
